@@ -4,18 +4,14 @@ import os
 import sys
 
 def path_search():
+    
     for dir,subdir,files in os.walk("C:/Users/USUARIO/Desktop/obs"):
-        print(f"Dir : {dir}")
-        print(f"subdir : {subdir}")
-        print(f"files : {files}")
+        for file in files:
+         complete_path = os.path.join(dir, file)
+         print(complete_path)
+        
 
 path_search()
-
-
-
-
- 
-
 
 
 def fazwin():
