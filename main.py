@@ -2,17 +2,26 @@
 import pygame
 import os
 import sys
+from cryptography.fernet import Fernet 
 
-def path_search():
-    
-    for dir,subdir,files in os.walk("C:/Users/USUARIO/Desktop/obs"):
-        for file in files:
-         complete_path = os.path.join(dir, file)
-         print(complete_path)
-        
+#generate and save key
+key = Fernet.generate_key()
+with open("key.key", "wb") as file_key:
+    file_key.write(key)
 
-path_search()
+#load key
+loaded_key = Fernet(key)
 
+#Read original file
+with open("prueba.txt", "rb") as f:
+    original_data = f.read()
+
+#encrypt data, fernet is gonna to encrypt the content in the variable "original_data" using the loaded key
+encrypted_data = loaded_key.encrypt(original_data)
+
+#save encrypted file
+with open("documento.txt.encrypted", "wb") as f_encrypted:
+    f_encrypted.write(encrypted_data)
 
 def fazwin():
     pygame.init() #init pygame
@@ -34,5 +43,4 @@ def fazwin():
         wind.fill((0, 0, 0)) 
         wind.blit(fazbear_img, (0, 0))
         pygame.display.flip()
-
     pygame.quit()
