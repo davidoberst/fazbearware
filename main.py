@@ -3,7 +3,7 @@ import pygame
 import os
 from cryptography.fernet import Fernet 
 
-key = Fernet.generate_key() #KEY TO ENCRYPT AND DECRYPT (TEMPORAL FOR NOW)
+key = Fernet.generate_key() #KEY TO ENCRYPT AND DECRYPT 
 
 def decrypt():
    input("decrypt?")
@@ -43,3 +43,5 @@ def fazwin():
         wind.blit(fazbear_img, (0, 0))
         pygame.display.flip()
     pygame.quit()
+
+

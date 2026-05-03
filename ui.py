@@ -9,7 +9,6 @@ import pygame
 import os
 
 def change_wallpaper_play_music():
-
     #change wallpaper
     relative_path = "assets/img.jpg"
     absolute_path = os.path.abspath(relative_path)
