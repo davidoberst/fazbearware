@@ -2,7 +2,7 @@
 UI - FazbearWare
 Description: Create and manage the window that advise about the ransom , also play music, and change background
 """
-
+from victim_ID import VICTIM_ID
 import tkinter as tk
 import ctypes
 import pygame
@@ -114,7 +114,7 @@ wallet_label.pack(side="top", pady=15)
 
 victim_id_label = tk.Label(
     window,
-    text=f"Your personal id : YUEHYWUEY38",
+    text=f"Your personal id : {VICTIM_ID}",
     fg="red", 
     bg="#000000", 
     font=("Georgia", 14),
