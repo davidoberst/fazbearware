@@ -1,4 +1,5 @@
 import tkinter as tk
+from victim_ID import VICTIM_ID
 
 window = tk.Tk()
 window.title("FOUR FILES ARE ENCRYPTED BY FAZBEARWARE")
@@ -69,7 +70,7 @@ wallet_label.pack(side="top", pady=15)
 
 victim_id_label = tk.Label(
     window,
-    text=f"Your personal id : YUEHYWUEY38",
+    text=f"Your personal id : {VICTIM_ID}",
     fg="red", 
     bg="#000000", 
     font=("Georgia", 14),
