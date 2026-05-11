@@ -9,5 +9,5 @@ FazbearWare is a functional malware Proof-of-Concept (PoC) designed for cybersec
 * Automatically changes the desktop wallpaper and triggers persistent background audio via Windows API.
 * Generates a unique 55-character ID for each infected machine to manage decryption keys.
 * Deploys a custom UI with automated payment instructions and contact details for the attacker.
-* Automated exfiltration of encryption keys to a remote Flask-based Command & Control server.
+* Automated exfiltration of encryption keys to a remote Flask-based Command & Control server and a SQLLITE3 database.
 
