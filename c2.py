@@ -26,7 +26,7 @@ def init_db():
     ''')
     conn.commit()
     conn.close()
-    print(f"[*] Database {DATABASE} initialized.") # Esto te confirmará que se creó
+    print(f"[*] Database {DATABASE} initialized.") 
 
 # REGISTER PATHS
 @app.route('/')

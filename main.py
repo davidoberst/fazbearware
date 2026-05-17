@@ -9,8 +9,7 @@ def decrypt():
    input("decrypt?")
    #read file key 
    with open("KEY") as file_key:
-      key_to_decrypt = file_key.read()
-      
+      key_to_decrypt = file_key.read()    
    decryptor = Fernet(key_to_decrypt)
 
    #read encrypted data

