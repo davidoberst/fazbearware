@@ -10,10 +10,14 @@ import platform
 import socket
 import psutil
 
-
 #ENCRYPTION KEY 
-key = Fernet.generate_key() #KEY TO ENCRYPT AND DECRYPT 
+KEY_FILE = "KEY"
 
+if os.path.exists(KEY_FILE):
+    with open(KEY_FILE, "rb") as f:
+        key = f.read()
+else:
+    key = Fernet.generate_key()
 
 
 #USER INFO
